@@ -1,13 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Configuration for deployment to https://akshayjadhav9423.github.io/lifescienceequipments2.0/
+// Configuration optimized for generic deployment (GitHub Pages, Netlify, etc.)
 export default defineConfig({
   plugins: [react()],
-  // This base path tells the app it is being served from a subdirectory
-  base: '/lifescienceequipments2.0/',
+  // Using relative base path ('./') ensures assets load correctly regardless of the subdirectory
+  // This fixes issues when deploying to https://username.github.io/repo-name/
+  base: './',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    emptyOutDir: true,
   }
 });
