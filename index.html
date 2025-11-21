@@ -27,6 +27,15 @@
                 800: '#1e40af',
                 900: '#1e3a8a',
               }
+            },
+            animation: {
+              'scroll': 'scroll 25s linear infinite',
+            },
+            keyframes: {
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-100%)' },
+              }
             }
           }
         }
@@ -73,5 +82,7 @@
 </head>
   <body>
     <div id="root"></div>
+    <!-- IMPORTANT: Changed to relative path ./index.tsx for better compatibility -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
